@@ -1,4 +1,4 @@
-# va-ppt-connector
+# ppt-connector
 
 Servizio serverless su AWS che compila template PowerPoint (.pptx) con dati dinamici ricevuti via JSON e restituisce un link per il download del file generato.
 
