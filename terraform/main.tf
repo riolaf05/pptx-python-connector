@@ -11,6 +11,12 @@ terraform {
 
 provider "aws" {
   region = var.aws_region
+
+  default_tags {
+    tags = {
+      PROJECT = "VAF"
+    }
+  }
 }
 
 # -------------------------------------------------------------------
@@ -94,22 +100,25 @@ resource "null_resource" "build_layer" {
   }
 
   provisioner "local-exec" {
-    command = <<-EOT
-      rm -rf ${path.module}/../build/layer
-      mkdir -p ${path.module}/../build/layer/python
-      pip install -r ${path.module}/../lambda/requirements.txt \
-        -t ${path.module}/../build/layer/python \
-        --platform manylinux2014_x86_64 \
-        --implementation cp \
-        --python-version 3.12 \
-        --only-binary=:all: \
+    interpreter = ["powershell", "-Command"]
+    command     = <<-EOT
+      if (Test-Path "${path.module}/../build/layer") { Remove-Item -Recurse -Force "${path.module}/../build/layer" }
+      New-Item -ItemType Directory -Force -Path "${path.module}/../build/layer/python" | Out-Null
+      pip install -r "${path.module}/../lambda/requirements.txt" `
+        -t "${path.module}/../build/layer/python" `
+        --platform manylinux2014_x86_64 `
+        --implementation cp `
+        --python-version 3.12 `
+        --only-binary=:all: `
         --no-deps
-      pip install python-pptx==1.0.2 lxml typing-extensions Pillow XlsxWriter \
-        -t ${path.module}/../build/layer/python \
-        --platform manylinux2014_x86_64 \
-        --implementation cp \
-        --python-version 3.12 \
+      if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      pip install python-pptx==1.0.2 lxml typing-extensions Pillow XlsxWriter `
+        -t "${path.module}/../build/layer/python" `
+        --platform manylinux2014_x86_64 `
+        --implementation cp `
+        --python-version 3.12 `
         --only-binary=:all:
+      if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     EOT
   }
 }

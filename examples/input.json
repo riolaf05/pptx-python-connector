@@ -7,25 +7,21 @@
     "autore": "Marco Rossi",
     "data_report": "12 Aprile 2026",
     "dipartimento": "Sales & Marketing",
-
-    "fatturato_totale": "€ 1.250.000",
+    "fatturato_totale": "\u20ac 1.250.000",
     "variazione_percentuale": "+12,5%",
     "numero_clienti": "347",
     "nuovi_clienti": "58",
-    "obiettivo_trimestrale": "€ 1.100.000",
+    "obiettivo_trimestrale": "\u20ac 1.100.000",
     "stato_obiettivo": "RAGGIUNTO",
-
     "prodotto_top_1": "Licenza Enterprise",
-    "prodotto_top_1_valore": "€ 450.000",
+    "prodotto_top_1_valore": "\u20ac 450.000",
     "prodotto_top_2": "Supporto Premium",
-    "prodotto_top_2_valore": "€ 320.000",
+    "prodotto_top_2_valore": "\u20ac 320.000",
     "prodotto_top_3": "Consulenza On-Site",
-    "prodotto_top_3_valore": "€ 180.000",
-
+    "prodotto_top_3_valore": "\u20ac 180.000",
     "nota_1": "Il mercato EMEA ha registrato una crescita del 18% rispetto al trimestre precedente.",
     "nota_2": "Il segmento Enterprise rappresenta il 60% del fatturato totale.",
     "nota_3": "Prevista espansione nel mercato APAC nel Q2 2026.",
-
     "nome_contatto": "Marco Rossi",
     "email_contatto": "m.rossi@azienda.com",
     "telefono_contatto": "+39 02 1234567"
