@@ -145,48 +145,11 @@ lambda_function_name = "va-ppt-connector"
 lambda_function_url  = "https://xxxxx.lambda-url.eu-west-1.on.aws/"
 ```
 
-## 5. Caricare un nuovo template su S3
+## 5. Test rapido
 
-```powershell
-$BUCKET = terraform output -raw s3_bucket_name
+Vedi [QUICK_TEST.md](QUICK_TEST.md) per i comandi completi: upload template, invocazione Lambda, download del PPT compilato e log CloudWatch.
 
-aws s3 cp "..\examples\report_template.pptx" "s3://$BUCKET/templates/report_template.pptx"
-```
-
-## 6. Test rapido — compilare il PPT e scaricare il risultato
-
-```powershell
-cd ..   # torna nella root del progetto
-
-# Invoca la Lambda con il JSON di esempio
-aws lambda invoke `
-  --function-name va-ppt-connector `
-  --region eu-west-1 `
-  --payload file://examples/input.json `
-  --cli-binary-format raw-in-base64-out `
-  response.json
-
-# Estrai il pre-signed URL e scarica il file
-$url = (Get-Content response.json | ConvertFrom-Json | `
-  Select-Object -ExpandProperty body | ConvertFrom-Json).download_url
-
-Invoke-WebRequest -Uri $url -OutFile ".\report_compilato.pptx"
-```
-
-Il file `report_compilato.pptx` viene salvato nella root del progetto.
-
-### Risposta Lambda
-
-```json
-{
-  "statusCode": 200,
-  "body": "{\"message\": \"PPT compilato con successo\", \"output_s3_key\": \"output/report_compilato.pptx\", \"download_url\": \"https://...\"}"
-}
-```
-
-Il pre-signed URL scade dopo **1 ora** (configurabile con la variabile `presigned_url_expiration`).
-
-## 7. Cleanup
+## 6. Cleanup
 
 ```powershell
 cd terraform
