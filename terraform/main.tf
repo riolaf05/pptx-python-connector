@@ -91,6 +91,32 @@ resource "aws_iam_role_policy_attachment" "lambda_s3" {
   policy_arn = aws_iam_policy.lambda_s3.arn
 }
 
+# Policy: SES – invio email di alert
+data "aws_iam_policy_document" "lambda_ses" {
+  statement {
+    effect    = "Allow"
+    actions   = ["ses:SendEmail", "ses:SendRawEmail"]
+    resources = ["*"]
+  }
+}
+
+resource "aws_iam_policy" "lambda_ses" {
+  name   = "${var.project_name}-lambda-ses"
+  policy = data.aws_iam_policy_document.lambda_ses.json
+}
+
+resource "aws_iam_role_policy_attachment" "lambda_ses" {
+  role       = aws_iam_role.lambda_role.name
+  policy_arn = aws_iam_policy.lambda_ses.arn
+}
+
+# -------------------------------------------------------------------
+# SES – verifica email di alert
+# -------------------------------------------------------------------
+resource "aws_ses_email_identity" "alert" {
+  email = var.alert_email
+}
+
 # -------------------------------------------------------------------
 # Lambda Layer – dipendenze python-pptx
 # -------------------------------------------------------------------
@@ -162,6 +188,8 @@ resource "aws_lambda_function" "ppt_compiler" {
     variables = {
       S3_BUCKET                = aws_s3_bucket.ppt_bucket.id
       PRESIGNED_URL_EXPIRATION = tostring(var.presigned_url_expiration)
+      ALERT_EMAIL              = var.alert_email
+      ALERT_FROM_EMAIL         = var.alert_email
     }
   }
 }

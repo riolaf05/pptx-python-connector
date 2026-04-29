@@ -15,3 +15,9 @@ variable "presigned_url_expiration" {
   type        = number
   default     = 3600
 }
+
+variable "alert_email" {
+  description = "Indirizzo email per gli alert di errore Lambda (deve essere verificato in SES)"
+  type        = string
+  default     = "r.laface@value-accelerator.io"
+}

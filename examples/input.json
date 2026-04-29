@@ -1,84 +1,156 @@
-{
-  "template_s3_key": "templates/report_template.pptx",
-  "output_s3_key": "output/report_compilato.pptx",
-  "placeholders": {
-    "customer_name": "Acme S.p.A.",
-    "document_date": "29 Aprile 2026",
-    "document_version": "1.0",
-    "assessment_period": "Q1 2026",
-    "total_document_reviewed": "42",
-    "total_interviews": "12",
-
-    "swot_strength_1": "Brand riconosciuto sul mercato nazionale",
-    "swot_strength_2": "Team tecnico altamente specializzato",
-    "swot_strength_3": "Portafoglio prodotti diversificato",
-    "swot_strength_4": "Solida base clienti enterprise",
-
-    "swot_weakness_1": "Processi interni non ancora digitalizzati",
-    "swot_weakness_2": "Dipendenza da pochi fornitori chiave",
-    "swot_weakness_3": "Time-to-market elevato",
-    "swot_weakness_4": "Scarsa presenza sui canali digitali",
-
-    "swot_opportunity_1": "Crescita del mercato cloud in EMEA",
-    "swot_opportunity_2": "Nuovi segmenti SMB non ancora presidiati",
-    "swot_opportunity_3": "Partnership con system integrator",
-    "swot_opportunity_4": "Espansione geografica nel mercato DACH",
-
-    "swot_threat_1": "Ingresso di nuovi competitor low-cost",
-    "swot_threat_2": "Evoluzione normativa GDPR e AI Act",
-    "swot_threat_3": "Pressione sui margini da parte dei clienti",
-    "swot_threat_4": "Volatilit\u00e0 dei costi delle materie prime",
-
-    "strategy_so_finding_1": "La visione strategica \u00e8 chiaramente definita e condivisa dal top management.",
-    "strategy_so_finding_2": "Esiste un piano triennale aggiornato con obiettivi misurabili.",
-    "strategy_so_finding_3": "Il budget R&D \u00e8 in crescita del 15% rispetto all'anno precedente.",
-    "strategy_so_finding_4": "La governance \u00e8 strutturata con board attivo e comitati funzionanti.",
-    "strategy_so_finding_5": "Le iniziative di trasformazione digitale sono presidiate da un CDO dedicato.",
-    "strategy_so_finding_6": "Il processo di pianificazione coinvolge tutte le business unit.",
-    "strategy_so_finding_7": "Sono presenti KPI strategici monitorati trimestralmente.",
-    "strategy_so_finding_8": "La cultura aziendale supporta l'innovazione e il cambiamento.",
-    "strategy_so_finding_9": "Esistono programmi strutturati di sviluppo del talento interno.",
-    "strategy_tb_finding_1": "La strategia di internazionalizzazione non \u00e8 ancora operativa.",
-    "strategy_tb_finding_2": "Mancano strumenti di scenario planning a medio-lungo termine.",
-    "strategy_tb_finding_3": "Il processo di M&A non \u00e8 presidiato da competenze dedicate.",
-
-    "marketing_so_finding_1": "Il brand \u00e8 ben posizionato nel segmento enterprise.",
-    "marketing_so_finding_2": "La content strategy produce lead qualificati in modo costante.",
-    "marketing_so_finding_3": "Il sito web \u00e8 stato recentemente rinnovato con focus sulla UX.",
-    "marketing_so_finding_4": "Sono attive campagne SEO/SEM con ROI misurabile.",
-    "marketing_so_finding_5": "La presenza su LinkedIn \u00e8 cresciuta del 30% nell'ultimo anno.",
-    "marketing_so_finding_6": "Esiste un programma di referral clienti attivo.",
-    "marketing_so_finding_7": "Il CRM \u00e8 integrato con gli strumenti di marketing automation.",
-    "marketing_so_finding_8": "Gli eventi di settore generano pipeline qualificata.",
-    "marketing_so_finding_9": "Il team marketing \u00e8 strutturato per specializzazione (demand, brand, digital).",
-    "marketing_tb_finding_1": "Il budget marketing \u00e8 inferiore alla media del settore (< 5% del fatturato).",
-    "marketing_tb_finding_2": "Manca una strategia organica sui canali video e social media.",
-    "marketing_tb_finding_3": "Le campagne outbound hanno tassi di conversione in calo.",
-
-    "sales_so_finding_1": "La forza vendita \u00e8 strutturata con ruoli hunter e farmer distinti.",
-    "sales_so_finding_2": "Il processo di vendita \u00e8 documentato e seguito con costanza.",
-    "sales_so_finding_3": "Il tasso di rinnovo contratti \u00e8 superiore al 90%.",
-    "sales_so_finding_4": "Esiste un programma di incentivazione efficace per il team sales.",
-    "sales_so_finding_5": "Il CRM \u00e8 adottato da tutto il team con dati aggiornati.",
-    "sales_so_finding_6": "Le previsioni di vendita hanno un'accuratezza superiore all'80%.",
-    "sales_so_finding_7": "Il processo di onboarding nuovi clienti \u00e8 strutturato.",
-    "sales_so_finding_8": "Esistono partnership di canale attive con rivenditori qualificati.",
-    "sales_so_finding_9": "Il ciclo medio di vendita si \u00e8 ridotto del 20% nell'ultimo anno.",
-    "sales_tb_finding_1": "La pipeline non \u00e8 sufficientemente diversificata per settore verticale.",
-    "sales_tb_finding_2": "Manca un processo formalizzato di win/loss analysis.",
-    "sales_tb_finding_3": "Il time-to-quote \u00e8 ancora troppo elevato per offerte complesse.",
-
-    "product_so_finding_1": "La roadmap di prodotto \u00e8 definita su 18 mesi con priorit\u00e0 chiare.",
-    "product_so_finding_2": "Il processo di sviluppo agile \u00e8 maturo e ben adottato.",
-    "product_so_finding_3": "La qualit\u00e0 del prodotto \u00e8 certificata ISO 9001.",
-    "product_so_finding_4": "Il feedback dei clienti \u00e8 sistematicamente raccolto e analizzato.",
-    "product_so_finding_5": "Esiste un team dedicato alla UX/UI con competenze solide.",
-    "product_so_finding_6": "L'architettura tecnologica \u00e8 moderna e scalabile (cloud-native).",
-    "product_so_finding_7": "La sicurezza del prodotto \u00e8 presidiata con vulnerability assessment periodici.",
-    "product_so_finding_8": "Le integrazioni con sistemi terzi sono documentate e stabili.",
-    "product_so_finding_9": "Il time-to-market per nuove feature \u00e8 in miglioramento costante.",
-    "product_tb_finding_1": "Il debito tecnico accumulato rallenta lo sviluppo di nuove funzionalit\u00e0.",
-    "product_tb_finding_2": "Manca una strategia chiara per l'adozione dell'AI nel prodotto.",
-    "product_tb_finding_3": "La documentazione tecnica non \u00e8 sempre aggiornata."
+[
+  {
+    "output": {
+      "current_state_synthesis_items": [
+        "NUO’s current commercial motion is highly dependent on a single global seller, creating a structural bottleneck across prospecting, qualification, demos, trials, proposals, and deal progression.",
+        "NUO’s economics are constrained by engineer-heavy onboarding and minimum contract duration requirements, making smaller portfolios unattractive and limiting the addressable market unless implementation is standardized.",
+        "Product maturity is perceived as a commercial constraint because dated UX, slow roadmap responsiveness, client-funded feature development, and possible security or technical debt concerns undermine SaaS credibility during sales cycles.",
+        "The sales process has meaningful structure and SaaS discipline, but it remains manually intensive and difficult to scale because much of the value is delivered through personalized rep effort rather than repeatable systems.",
+        "Marketing is not yet functioning as a demand-generation engine for NUO, and current content and website conversion appear insufficient to create qualified inbound pipeline.",
+        "NUO competes internally with Vector’s higher-margin Asset Management offering, creating incentive conflict, unclear positioning, and reduced attention from other commercial reps."
+      ],
+      "future_state_synthesis_items": [
+        "NUO’s desired future state is a scalable, repeatable value-selling motion that is no longer dependent on one individual and is supported by dedicated or virtually aligned commercial capacity.",
+        "The future go-to-market should include a refined ICP, clearer packaging, and pricing thresholds that protect unit economics while reducing wasted presales and onboarding effort.",
+        "NUO needs a more credible product roadmap and modern SaaS experience, including improved UI/UX and security posture, to increase demo effectiveness and reduce perceived adoption risk.",
+        "Marketing should become a proactive pipeline-generation function through improved website conversion, webinars, events, podcasts, interactive assets, and differentiated thought leadership.",
+        "Internal contracting and legal review should become predictable, template-driven, and SLA-backed so late-stage deals are not lost to avoidable process delays."
+      ],
+      "strengths_synthesis_items": [
+        "When prospects engage deeply, NUO can win because the reported win rate suggests the offer resonates when supported by personalized attention and a disciplined evaluation process.",
+        "The team has a clear understanding of deal-level unit economics and is willing to disqualify unprofitable opportunities, which protects margin and prevents inefficient growth.",
+        "NUO has a structured sales process that already reflects several core SaaS selling disciplines, including qualification, staged demos, technical validation, tailored offers, and trial-based risk reduction.",
+        "NUO can combine executive-level selling with technical validation by involving Customer Success in deeper product evaluations.",
+        "Existing collateral and process artifacts provide a starting point for sales codification rather than requiring the go-to-market playbook to be built from zero."
+      ],
+      "weaknesses_synthesis_items": [
+        "The most acute internal weakness is sales capacity: a one-person global sales model prevents sufficient market coverage and makes revenue generation fragile.",
+        "High onboarding effort and engineering dependency constrain commercial flexibility, require long commitments, and reduce the attractiveness of smaller deals.",
+        "The selling motion is overly reliant on individualized seller expertise, making it difficult for other Vector reps to sell NUO consistently or confidently.",
+        "The product experience is not yet aligned with modern SaaS buyer expectations, creating friction in demonstrations and undermining perceived value.",
+        "Internal incentives and positioning between NUO and Vector Asset Management are misaligned, reducing cross-sell motivation and creating potential cannibalization concerns.",
+        "Product development appears reactive and client-funded rather than roadmap-led, which risks creating a bespoke-services perception and slowing scalable product maturation.",
+        "Marketing lacks demand-generation rigor and differentiation, leaving sales under-supported and limiting inbound pipeline creation.",
+        "Slow legal and contracting processes create avoidable late-stage risk and can extend sales cycles beyond buyer tolerance."
+      ],
+      "threats_synthesis_items": [
+        "More mature SaaS competitors may win on modern UX, implementation confidence, roadmap velocity, and perceived platform credibility.",
+        "Rising buyer expectations for cybersecurity, modern SaaS standards, and technical reliability could turn current product debt into a disqualifying purchase barrier.",
+        "Internal portfolio conflict with Vector Asset Management may continue to dilute market focus and create confusing buyer messages if incentives and positioning remain unresolved.",
+        "Long and variable sales cycles expose NUO to budget changes, shifting buyer priorities, stakeholder turnover, and competitor displacement.",
+        "Slow procurement and legal review can cause customers to choose faster-moving alternatives even after commercial interest is established.",
+        "If the market shifts toward smaller portfolios, shorter commitments, or faster payback expectations, NUO’s current 3-year minimum economics may reduce competitiveness."
+      ],
+      "opportunities_synthesis_items": [
+        "NUO can expand coverage quickly by building a virtual NUO sales team of selected internal reps with stronger incentives, enablement, and dotted-line accountability.",
+        "Standardizing onboarding through templates, automation, and tiered implementation packages would improve unit economics, shorten time-to-value, and potentially create room for more flexible commercial terms.",
+        "Clarifying the relationship between NUO and Asset Management can turn internal conflict into a portfolio advantage through explicit DIY, outsourced, and hybrid commercial pathways.",
+        "A stricter ICP and qualification model can focus resources on portfolios with sufficient scale, urgency, data readiness, and multi-year commitment potential.",
+        "Modernizing the product experience and publishing a credible roadmap would reduce sales friction and strengthen NUO’s ability to compete as a SaaS platform rather than a bespoke internal tool.",
+        "A more modern demand-generation program can create qualified inbound pipeline and reduce dependence on one seller’s prospecting capacity.",
+        "Pre-approved legal templates and deal-desk SLAs can reduce cycle-time risk and protect late-stage opportunities."
+      ],
+      "ideal_customer_profile_synthesis_items": [
+        "NUO’s best-fit accounts are asset owners, operators, or managers with portfolios large enough to amortize onboarding cost and justify a multi-year software commitment; very small portfolios, such as those below approximately 1MW, appear structurally unattractive under current onboarding economics.",
+        "Best-fit customers have clear urgency around operational performance, portfolio visibility, governance, and internal control rather than only a general interest in software.",
+        "Ideal accounts can support a data-driven evaluation, including access to portfolio data and availability of executive plus technical stakeholders for a staged buying process.",
+        "NUO is especially relevant for customers that want a platform-enabled alternative to fully outsourced Asset Management or that may benefit from a hybrid software-plus-services model."
+      ],
+      "target_persona_synthesis_items": [
+        "Executive sponsors in asset-owning or asset-operating organizations care about portfolio performance, visibility, governance, operating cost control, risk reduction, ROI, time-to-value, implementation confidence, security, proof of outcomes, and whether NUO can replace or complement outsourced services.",
+        "Technical or operations evaluators care about operational efficiency, data quality, workflow fit, technical feasibility, day-to-day portfolio management, usability, feature depth, data handling, integrations, support, roadmap responsiveness, onboarding workload, data readiness, and security posture.",
+        "Internal Vector commercial representatives care about quota attainment, margin protection, client coverage across software and services, compensation alignment, ease of explaining NUO, rules of engagement with Asset Management, enablement, cannibalization risk, software-selling complexity, and positioning versus higher-margin offerings."
+      ],
+      "value_proposition_synthesis_items": [
+        "NUO’s core value proposition is a SaaS-like platform that helps asset portfolio stakeholders manage and optimize assets with greater visibility, governance, and control than fragmented manual processes.",
+        "NUO offers a platform-enabled alternative to full outsourcing, allowing customers to internalize more operational control while still using expert services where valuable.",
+        "NUO’s promised outcomes include improved decision-making, structured workflows, portfolio insight, and a scalable internal operating model for asset management activities.",
+        "The evaluation motion itself is part of the value proposition: discovery, executive demo, technical deep dive, and trial options help buyers reduce perceived adoption risk before committing."
+      ],
+      "unique_selling_point_synthesis_items": [
+        "The combination of software and Vector’s Asset Management expertise could become a distinctive platform-plus-services advantage if packaged coherently.",
+        "NUO’s current practical differentiator is the high-touch, personalized sales and evaluation experience that translates each customer’s context into tailored demos, offers, and trials.",
+        "NUO can differentiate through disciplined qualification and economic fit by focusing on accounts where onboarding investment and customer value are aligned.",
+        "NUO’s ability to support both executive storytelling and technical validation creates a differentiated buying experience for multi-stakeholder evaluations."
+      ],
+      "commercial_insight_synthesis_items": [
+        "The strongest commercial insight is to reframe the buyer’s choice from outsourced Asset Management versus fragmented internal tools to an operating-model decision: a platform-enabled control tower can preserve internal governance while selectively using external expertise.",
+        "NUO should challenge customers to evaluate not only software cost, but also the long-term cost of vendor dependency, manual governance, and insufficient portfolio control.",
+        "The multi-year commitment can be repositioned as an adoption horizon required to capture transformation economics, but only if onboarding, roadmap, and outcome proof are credible.",
+        "Sales-cycle variability suggests many prospects may not yet perceive the problem as urgent, so NUO needs a sharper problem narrative that quantifies the cost of inaction."
+      ],
+      "other_observations_synthesis_items": [
+        "Sales-cycle variability from very short to eight months or more indicates inconsistent urgency, ICP fit, stakeholder alignment, and value articulation.",
+        "Contracting and legal delays should be treated as a near-term commercial transformation workstream, not as an administrative afterthought.",
+        "The current client-funded feature model risks pulling NUO toward bespoke development and away from scalable SaaS product management.",
+        "Commercial team turnover in the broader organization increases the urgency of documented process, enablement, and institutionalized knowledge transfer."
+      ],
+      "sales_key_findings": [
+        "NUO’s revenue generation is constrained by dependence on one global seller and by a high-touch motion that must be codified before broader commercial coverage can scale.",
+        "NUO needs tighter ICP, qualification, packaging, and pricing discipline because engineer-heavy onboarding and multi-year economics make smaller or low-urgency accounts unattractive.",
+        "Product maturity issues, including dated UX, slow roadmap responsiveness, security concerns, and technical debt, create sales friction and weaken SaaS credibility.",
+        "Marketing is not yet generating sufficient qualified inbound pipeline, leaving sales overly dependent on outbound effort and individual seller capacity.",
+        "Internal conflict between NUO and Vector Asset Management creates incentive misalignment, unclear positioning, and potential buyer confusion across software, services, and hybrid options.",
+        "Long sales cycles, slow legal review, and inconsistent urgency create avoidable deal risk even after commercial interest has been established."
+      ],
+      "marketing_key_findings": [
+        "Marketing is not yet operating as a reliable demand-generation engine for NUO, and current content and website conversion appear insufficient to create qualified inbound pipeline.",
+        "NUO needs a modern demand-generation program using website conversion improvements, webinars, events, podcasts, interactive assets, and differentiated thought leadership.",
+        "Sales-cycle variability suggests marketing must help sharpen the problem narrative and quantify the cost of inaction so prospects perceive greater urgency.",
+        "Weak marketing differentiation leaves sales under-supported and may allow competitors to define the category and buyer problem first."
+      ],
+      "product_key_findings": [
+        "Engineer-heavy onboarding and implementation dependency constrain NUO’s unit economics, limit commercial flexibility, and reduce the attractiveness of smaller deals.",
+        "Dated UI/UX, security concerns, technical debt, and slow roadmap responsiveness undermine SaaS credibility and create friction in demonstrations and technical evaluations.",
+        "Reactive, client-funded feature development risks pushing NUO toward bespoke services rather than scalable SaaS product management.",
+        "Standardized onboarding, automation, tiered implementation packages, and a credible roadmap could improve time-to-value and expand commercial flexibility.",
+        "Technical and operations evaluators require strong usability, feature depth, data handling, integration approach, support model, and security posture to validate NUO confidently.",
+        "NUO’s platform value depends on helping customers improve portfolio visibility, structured workflows, decision-making, and internal operating model scalability."
+      ],
+      "strategic_key_findings": [
+        "NUO shows evidence of product-market relevance, but repeatable growth is constrained by internal scale infrastructure across sales capacity, onboarding, product maturity, marketing demand generation, contracting, and enablement.",
+        "The relationship between NUO software and Vector Asset Management is the central strategic tension because it can either suppress NUO through cannibalization fears or become a differentiated hybrid proposition.",
+        "NUO’s current economics require disciplined ICP focus on larger, urgent, data-ready accounts that can justify onboarding investment and multi-year commitments.",
+        "Product modernization and roadmap credibility are strategic requirements because mature SaaS competitors may win on UX, implementation confidence, security, and platform credibility.",
+        "Legal and procurement delays, long sales cycles, and inconsistent buyer urgency create near-term risks to conversion and should be treated as commercial transformation priorities.",
+        "NUO’s strongest strategic narrative is an operating-model choice that gives customers a platform-enabled control tower while preserving access to expert services where valuable."
+      ],
+      "sales_so_finding": [
+        "NUO can expand market coverage quickly by building a virtual NUO sales team with selected internal reps, stronger incentives, enablement, and dotted-line accountability.",
+        "Clarifying NUO’s relationship with Asset Management can turn internal conflict into a portfolio advantage through explicit DIY, outsourced, and hybrid commercial pathways.",
+        "A stricter ICP and qualification model can focus sales resources on portfolios with sufficient scale, urgency, data readiness, and multi-year commitment potential."
+      ],
+      "marketing_so_finding": [
+        "A modern demand-generation program can create qualified inbound pipeline and reduce dependence on one seller’s prospecting capacity."
+      ],
+      "product_so_finding": [
+        "Standardizing onboarding through templates, automation, and tiered implementation packages would improve unit economics, shorten time-to-value, and potentially create room for more flexible commercial terms.",
+        "Modernizing the product experience and publishing a credible roadmap would reduce sales friction and strengthen NUO’s ability to compete as a SaaS platform rather than a bespoke internal tool.",
+        "NUO can combine executive-level selling with technical validation by involving Customer Success in deeper product evaluations."
+      ],
+      "strategic_so_finding": [
+        "NUO can expand coverage quickly by building a virtual NUO sales team of selected internal reps with stronger incentives, enablement, and dotted-line accountability.",
+        "Clarifying the relationship between NUO and Asset Management can turn internal conflict into a portfolio advantage through explicit DIY, outsourced, and hybrid commercial pathways.",
+        "A stricter ICP and qualification model can focus resources on portfolios with sufficient scale, urgency, data readiness, and multi-year commitment potential."
+      ],
+      "sales_tb_finding": [
+        "A one-person global sales model prevents sufficient market coverage and makes revenue generation fragile.",
+        "High onboarding effort and engineering dependency constrain commercial flexibility, require long commitments, and reduce the attractiveness of smaller deals.",
+        "Slow legal and contracting processes create avoidable late-stage risk and can extend sales cycles beyond buyer tolerance."
+      ],
+      "marketing_tb_finding": [
+        "Marketing lacks demand-generation rigor and differentiation, leaving sales under-supported and limiting inbound pipeline creation."
+      ],
+      "product_tb_finding": [
+        "The product experience is not yet aligned with modern SaaS buyer expectations, creating friction in demonstrations and undermining perceived value.",
+        "Product development appears reactive and client-funded rather than roadmap-led, which risks creating a bespoke-services perception and slowing scalable product maturation.",
+        "Rising buyer expectations for cybersecurity, modern SaaS standards, and technical reliability could turn current product debt into a disqualifying purchase barrier."
+      ],
+      "strategic_tb_finding": [
+        "The one-person global sales model prevents sufficient market coverage and makes revenue generation fragile.",
+        "Internal portfolio conflict with Vector Asset Management may continue to dilute market focus and create confusing buyer messages if incentives and positioning remain unresolved.",
+        "More mature SaaS competitors may win on modern UX, implementation confidence, roadmap velocity, and perceived platform credibility."
+      ]
+    }
   }
-}
+]
