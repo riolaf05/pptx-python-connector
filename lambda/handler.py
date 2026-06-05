@@ -19,6 +19,7 @@ import boto3
 from pptx import Presentation
 
 S3_BUCKET                = os.environ["S3_BUCKET"]
+API_KEY                  = os.environ.get("API_KEY", "")
 PRESIGNED_URL_EXPIRATION = int(os.environ.get("PRESIGNED_URL_EXPIRATION", "3600"))
 ALERT_EMAIL              = os.environ.get("ALERT_EMAIL", "")
 ALERT_FROM_EMAIL         = os.environ.get("ALERT_FROM_EMAIL", "")
@@ -27,6 +28,15 @@ s3  = boto3.client("s3")
 ses = boto3.client("ses")
 
 PLACEHOLDER_RE = re.compile(r"\{\{(\w+)\}\}")
+
+
+def check_api_key(event: dict) -> bool:
+    """Verifica che l'header x-api-key sia presente e corretto."""
+    if not API_KEY:
+        return True
+    headers = event.get("headers") or {}
+    provided = headers.get("x-api-key") or headers.get("X-Api-Key") or ""
+    return provided == API_KEY
 
 # ---------------------------------------------------------------------------
 # Mappatura: chiave nel JSON n8n → (prefisso placeholder template, max slot)
@@ -153,6 +163,13 @@ def replace_placeholders(prs: Presentation, placeholders: dict):
 
 def lambda_handler(event, context):
     try:
+        # --- Verifica API key ---
+        if not check_api_key(event):
+            return {
+                "statusCode": 401,
+                "body": json.dumps({"error": "Unauthorized: x-api-key mancante o non valida"}),
+            }
+
         # --- Parsing input ---
         if isinstance(event.get("body"), str):
             body = json.loads(event["body"])

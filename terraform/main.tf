@@ -44,6 +44,15 @@ resource "aws_s3_object" "ppt_template" {
   etag         = filemd5("${path.module}/../examples/report_template.pptx")
 }
 
+# Upload del template GTM Foundation Report
+resource "aws_s3_object" "gtm_template" {
+  bucket       = aws_s3_bucket.ppt_bucket.id
+  key          = "templates/report_gtm_template.pptx"
+  source       = "${path.module}/../examples/report_gtm_template.pptx"
+  content_type = "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+  etag         = filemd5("${path.module}/../examples/report_gtm_template.pptx")
+}
+
 # -------------------------------------------------------------------
 # IAM Role per la Lambda
 # -------------------------------------------------------------------
@@ -190,6 +199,7 @@ resource "aws_lambda_function" "ppt_compiler" {
       PRESIGNED_URL_EXPIRATION = tostring(var.presigned_url_expiration)
       ALERT_EMAIL              = var.alert_email
       ALERT_FROM_EMAIL         = var.alert_email
+      API_KEY                  = var.api_key
     }
   }
 }
@@ -199,5 +209,37 @@ resource "aws_lambda_function" "ppt_compiler" {
 # -------------------------------------------------------------------
 resource "aws_lambda_function_url" "ppt_compiler" {
   function_name      = aws_lambda_function.ppt_compiler.function_name
+  authorization_type = "NONE"
+}
+
+# -------------------------------------------------------------------
+# Lambda Function – GTM Foundation Report compiler
+# Richiede l'header x-api-key per l'autenticazione.
+# -------------------------------------------------------------------
+resource "aws_lambda_function" "gtm_compiler" {
+  function_name    = "${var.project_name}-gtm"
+  role             = aws_iam_role.lambda_role.arn
+  handler          = "gtm_handler.lambda_handler"
+  runtime          = "python3.12"
+  timeout          = 60
+  memory_size      = 512
+  filename         = data.archive_file.lambda_zip.output_path
+  source_code_hash = data.archive_file.lambda_zip.output_base64sha256
+  layers           = [aws_lambda_layer_version.deps.arn]
+
+  environment {
+    variables = {
+      S3_BUCKET                = aws_s3_bucket.ppt_bucket.id
+      GTM_TEMPLATE_KEY         = "templates/report_gtm_template.pptx"
+      PRESIGNED_URL_EXPIRATION = tostring(var.presigned_url_expiration)
+      ALERT_EMAIL              = var.alert_email
+      ALERT_FROM_EMAIL         = var.alert_email
+      API_KEY                  = var.gtm_api_key
+    }
+  }
+}
+
+resource "aws_lambda_function_url" "gtm_compiler" {
+  function_name      = aws_lambda_function.gtm_compiler.function_name
   authorization_type = "NONE"
 }

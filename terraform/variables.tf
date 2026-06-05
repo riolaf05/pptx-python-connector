@@ -21,3 +21,17 @@ variable "alert_email" {
   type        = string
   default     = "r.laface@value-accelerator.io"
 }
+
+variable "api_key" {
+  description = "API key per la Lambda principale (header x-api-key). Lasciare vuoto per disabilitare il controllo."
+  type        = string
+  sensitive   = true
+  default     = ""
+}
+
+variable "gtm_api_key" {
+  description = "API key per la Lambda GTM (header x-api-key). Lasciare vuoto per disabilitare il controllo."
+  type        = string
+  sensitive   = true
+  default     = ""
+}
