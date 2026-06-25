@@ -1,0 +1,142 @@
+{
+  "customer_name": "Acme Renewables",
+  "document_date": "05.06.2026",
+  "document_version": "1.0",
+  "template_s3_key": "templates/report_gtm_template.pptx",
+  "output_s3_key": "output/gtm_report_acme_renewables.pptx",
+
+  "icp": {
+    "industry": "Renewable Energy, Asset Management",
+    "geography": "DACH, Benelux, UK",
+    "company_size": "50–500 employees, €10M–€500M AUM",
+    "buying_group": "C-Level, Operations Manager, IT Lead",
+    "maturity_level": "Digital-first, growth stage",
+    "custom_field": "Min. portfolio: 5 MW"
+  },
+
+  "persona": {
+    "role_name": "Head of Asset Management",
+    "name": "Thomas Müller",
+    "role": "Head of Asset Management",
+    "age": "42",
+    "education": "MSc Engineering / MBA",
+    "location": "Munich, Germany",
+    "industry": "Renewable Energy",
+    "responsibilities": [
+      "Optimize portfolio performance across 20+ wind/solar assets",
+      "Ensure regulatory compliance and governance",
+      "Drive cost reduction and operational efficiency"
+    ],
+    "channels": "LinkedIn | Industry conferences | Email newsletters",
+    "objective_1": {
+      "title": "Portfolio Performance",
+      "description": "Maximize ROI across all managed assets with real-time visibility.",
+      "kpi1": "Portfolio uptime > 98%",
+      "kpi2": "Energy yield vs budget",
+      "kpi3": "O&M cost per MWh",
+      "pain_point_1": "Fragmented data across spreadsheets and tools",
+      "pain_point_2": "No single source of truth for portfolio status",
+      "winning_trigger": "Can NUO replace 5 disconnected tools?"
+    },
+    "objective_2": {
+      "title": "Operational Efficiency",
+      "description": "Reduce manual reporting effort and streamline workflows.",
+      "kpi1": "Report generation time < 2h",
+      "kpi2": "Issue resolution SLA < 24h",
+      "kpi3": "FTE hours saved per month",
+      "pain_point_1": "Analysts spend 60% of time on manual data aggregation",
+      "pain_point_2": "No automated alerting on underperformance",
+      "winning_trigger": "Automated reporting saves 20h/month per analyst"
+    },
+    "objective_3": {
+      "title": "Governance & Compliance",
+      "description": "Maintain audit trails and meet regulatory requirements.",
+      "kpi1": "100% audit-ready documentation",
+      "kpi2": "Zero compliance breaches",
+      "kpi3": "Stakeholder report turnaround < 24h",
+      "pain_point_1": "Manual processes create compliance gaps",
+      "pain_point_2": "Investor reporting is time-consuming and error-prone",
+      "winning_trigger": "One-click investor-ready reports"
+    },
+    "objective_4": {
+      "title": "Scalability",
+      "description": "Grow portfolio without proportional increase in headcount.",
+      "kpi1": "Assets per FTE ratio",
+      "kpi2": "Onboarding time for new assets < 2 weeks",
+      "kpi3": "Platform cost vs headcount cost",
+      "pain_point_1": "Every new asset requires additional manual effort",
+      "pain_point_2": "No standardized onboarding playbook",
+      "winning_trigger": "Add 10 assets with the same team size"
+    }
+  },
+
+  "value_proposition": {
+    "what_is": "NUO is a SaaS platform for renewable energy asset portfolio management.",
+    "what_does": "It centralizes asset data, automates performance monitoring, and generates investor-ready reports.",
+    "how_works": "Connect your data sources, define KPIs, and get real-time dashboards and automated alerts.",
+    "value_to_customer": "Reduce manual reporting effort by 60%, improve portfolio uptime, and scale without adding headcount."
+  },
+
+  "slogans": [
+    "From data chaos to portfolio control – in days, not months.",
+    "The operating system for renewable energy asset managers.",
+    "Scale your portfolio. Not your team."
+  ],
+
+  "customer_mental_model": {
+    "persona": "Head of Asset Management",
+    "objective": "Maximize portfolio ROI with minimal operational overhead",
+    "driving_factors": [
+      "Investor pressure for transparent, real-time reporting",
+      "Growing portfolio complexity across geographies"
+    ],
+    "pain_points": [
+      "Fragmented tools create data silos and manual reconciliation",
+      "Slow reporting cycles miss critical performance issues"
+    ],
+    "use_cases": [
+      "Centralized performance monitoring dashboard",
+      "Automated stakeholder reporting"
+    ]
+  },
+
+  "usps": [
+    {
+      "title": "Renewable Energy Native",
+      "body": [
+        "Built specifically for wind, solar, and storage asset management",
+        "Pre-built KPI frameworks aligned to industry standards",
+        "No generic ERP adaptation required"
+      ]
+    },
+    {
+      "title": "Platform + Expert Services",
+      "body": [
+        "Combine software automation with Vector's AM expertise",
+        "DIY, hybrid, or fully outsourced operating model",
+        "Single vendor for software and advisory"
+      ]
+    },
+    {
+      "title": "Rapid Time-to-Value",
+      "body": [
+        "Operational in weeks, not months",
+        "Templated onboarding and data migration support",
+        "Measurable ROI from day one"
+      ]
+    }
+  ],
+
+  "commercial_insight": {
+    "objective": "Maximize portfolio ROI",
+    "pain_point": "Fragmented tools and manual reporting",
+    "use_case": "Centralized performance monitoring",
+    "usp": "Renewable Energy Native platform",
+    "title": "The Control Tower Insight",
+    "narratives": [
+      "We work with asset managers that want to maximize portfolio ROI but face fragmented tools and manual reporting that slow them down.",
+      "Most teams try to solve this with more analysts or custom spreadsheets, but the issue is better solved with a centralized performance monitoring platform.",
+      "NUO is uniquely positioned to deliver this as the only renewable energy-native SaaS platform combining software automation with deep asset management expertise."
+    ]
+  }
+}
